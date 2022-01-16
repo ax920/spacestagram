@@ -35,5 +35,5 @@ The website only looks good on desktop, and I would make it responsive to fit sm
 
 This project was a great chance to work on my React skills. I definitely learned how to use Hooks more effectively, and in using them, it has definitely made me more appreciative of React as a framework. It's easy to learn with great documentation, and I find that the ideology behind functional components results in more clean code.
 
-I'm proud of how this project came out, especially in terms of the UI. I used Figma to mock-up a design and found that much more efficient than iterating the design with code. I tried to go for a minimalistic look and I'm happy with it.
+I'm proud of how this project came out, especially in terms of the UI. I used Figma to mock-up a design and found that much more efficient than iterating the design with code. I tried to go for a minimalistic look and I'm happy with how it turned out.
 
