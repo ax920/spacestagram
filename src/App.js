@@ -22,7 +22,7 @@ function App() {
     }
 
     const queryPhoto = async (date) => {
-      const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.APIKEY}&date=` + date)
+      const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_APIKEY}&date=` + date)
       if (!response.ok) {
         return false;
       } else {
