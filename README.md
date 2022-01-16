@@ -2,6 +2,7 @@
 
 This is my application for the front-end developer intern position at Shopify, where I chose to use the Astronomy Picture of the Day API. I would like to share some of my thought process as I went through this project!
 
+Check it out here: **https://alvin-spacestagram.herokuapp.com/**
 
 ## What I included
 
