@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Spacestagram - Shopify 2022
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my application for the front-end developer intern position at Shopify, where I chose to use the Astronomy Picture of the Day API. I would like to share some of my thought process as I went through this project!
 
-## Available Scripts
 
-In the project directory, you can run:
+## What I included
 
-### `npm start`
+- The daily image's title
+- The image itself
+- A like button
+- Date of the image
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Approach
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+I chose to use React for this project as a way to improve my React skills, as well as to make my life a lot easier. Right off the bat, I realized that I could componentize each daily image into its own "post" by feeding the data dynamically to a Post component, which is definitely better than creating each post manually.
 
-### `npm test`
+Upon load, the idea was to fetch a set amount of images, say 3, from the API, and store the JSON data using React's useState hook. With this data, I fed it to a Post component which takes in a _**title**, **image**, **like button**, and **date**._
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I wanted to mimic Instagram's infinite scroll functionality, which loads more images as you scroll to the bottom. So, I found that I could create a scroll listener that checks if you have scrolled to the bottom of the page and if so, executes a function that queries and renders 3 more images from the API.
 
-### `npm run build`
+## Some challenges I ran into
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+One of the problems that I was stuck on was that some posts would appear twice in a row. After some thinking, I realized that my implementation of the scroll listener was a bit flawed. The scroll listener fires many times a second, and so that's what was causing the app to query for the same picture multiple times. To solve this issue, I researched about throttling, which I have never used before. Basically, throttling means limiting the amount of times you can execute a function to once every second or whichever value you want. Lodash's throttle method was super easy to implement and solved this issue. No more duplicated pictures!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Things I would add if I had more time
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+It would have been cool to add the ability to save posts, perhaps in localstorage, or for a more long-term solution, in a database. I could see myself saving posts in a key-value pair with the key being the post's date, as the date uniquely identified a daily picture. Localstorage would be a nice short-term solution as a proof of concept since it's so easy to implement, and performs well. It would also allow the user to save their likes even if they leave the page.
 
-### `npm run eject`
+I would also improve the UI to be more sophisticated, for example adding a loading animation when images are in the process of being queried.
+In the future, I would also like to experiment with drawing my own logo and placing it to the left of the "Spacestagram" header.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The website only looks good on desktop, and I would make it responsive to fit smaller devices.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Takeaways
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This project was a great chance to work on my React skills. I definitely learned how to use Hooks more effectively, and in using them, it has definitely made me more appreciative of React as a framework. It's easy to learn with great documentation, and I find that the ideology behind functional components results in more clean code.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+I'm proud of how this project came out, especially in terms of the UI. I used Figma to mock-up a design and found that much more efficient than iterating the design with code. I tried to go for a minimalistic look and I'm happy with it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
