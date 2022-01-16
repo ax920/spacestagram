@@ -1,0 +1,86 @@
+.wrapper {
+    width: 35vw;
+}
+
+.post-title {
+    color: white;
+}
+
+.post-img {
+    width: 35vw;
+    height: auto;
+}
+
+.post-info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.like-container {
+    height: 4.5vh;
+    width: 6vw;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: orange;
+    border: 2px solid;
+    border-radius: 50px;
+}
+
+.like-container:hover {
+    cursor: pointer;
+}
+
+.like-text {
+    padding: 0;
+    margin: 0;
+    font-size: calc(5px + 2vmin);
+}
+
+.post-date {
+    color: white;
+    font-size: calc(8px + 1.4vmin);
+}
+
+/* fadeInUp animation */
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+  
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+  }
+  
+  @-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+  
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+  }
+  
+  .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+  }
+  
+  .animatedFadeInUp {
+    opacity: 0
+  }
+  
+  .fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+  }
