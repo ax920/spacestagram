@@ -10,6 +10,7 @@ Check it out here: **https://alvin-spacestagram.herokuapp.com/**
 - The image itself
 - A like button
 - The date of the image
+- Infinite scroll (new posts will continue to load as you keep scrolling)
 
 ## Approach
 
